@@ -1,24 +1,30 @@
 import React from "react";
 
+
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="text-center bg-black" >
+			<div className="justify-content-center align-items-center row bg-black p-5 m-2">
+				<div className="col-1 bg-dark me-3" style={{ color: "white", fontSize: "80px" }}>
+					<i className="fa fa-clock"></i>
+				</div>
+				<div className="col-1 bg-dark me-3" style={{ color: "white", fontSize: "80px" }}>
+					{props.days}
+				</div>
+				<div className="col-1 bg-dark me-3" style={{ color: "white", fontSize: "80px" }}>
+					{props.hours}
+				</div>
+				<div className="col-1 bg-dark me-3" style={{ color: "white", fontSize: "80px" }}>
+					{props.minutes}
+				</div>
+				<div className="col-1 bg-dark me-3" style={{ color: "white", fontSize: "80px" }}>
+					{props.seconds}
+				</div>
+			</div>
 		</div>
 	);
 };
